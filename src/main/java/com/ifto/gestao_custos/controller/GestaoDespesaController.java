@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ifto.gestao_custos.entity.Despesa;
-import com.ifto.gestao_custos.useCases.CadastroDespesaUseCase;
+import com.ifto.gestao_custos.model.Despesa;
+import com.ifto.gestao_custos.repository.DespesaRepository;
 
 @RequestMapping("/gestao") 
 @RestController 
 public class GestaoDespesaController {
     @Autowired 
-    CadastroDespesaUseCase cadastroDespesaUseCase; 
+    DespesaRepository despesaRepository; 
         
     @PostMapping("/create") 
     public void create(@RequestBody Despesa despesa){
-        cadastroDespesaUseCase.execute(despesa);
+        despesaRepository.save(despesa);
     }
 }

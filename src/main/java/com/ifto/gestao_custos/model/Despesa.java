@@ -1,4 +1,4 @@
-package com.ifto.gestao_custos.entity;
+package com.ifto.gestao_custos.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
